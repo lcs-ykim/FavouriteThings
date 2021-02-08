@@ -14,57 +14,24 @@ struct ContentView: View {
             List {
                 
                 NavigationLink(destination: TroyeSivan()) {
-                    HStack {
-                        Text("🎤")
-                            .font(.largeTitle)
-                        
-                        VStack(alignment: .leading) {
-                            Text("Troye Sivan")
-                                .fontWeight(.bold)
-                            
-                            Text("His music is my inspiration.")
-                                .font(.caption)
-                        }
-                        
-                        
-                    }
+                    ListItem(hint: "🎤",
+                             title: "Troye Sivan",
+                             summary: "His music is my inspiration")
                     
                 }
                 
                 NavigationLink(destination: HanRiver()) {
-                    HStack {
-                        Text("🌊")
-                            .font(.largeTitle)
-                        
-                        VStack(alignment: .leading) {
-                            Text("Han River")
-                                .fontWeight(.bold)
-                            
-                            Text("The warm breeze is always the best.")
-                                .font(.caption)
-                        }
-                        
-                        
-                    }
-                            
+                    ListItem(hint: "🌊",
+                             title: "Han River",
+                             summary: "The warm breeze always gets me.")
+                 
                 }
                 
                 NavigationLink(destination: Hockey()) {
-                    HStack {
-                        Text("🏒")
-                            .font(.largeTitle)
-                        
-                        VStack(alignment: .leading) {
-                            Text("Hockey")
-                                .fontWeight(.bold)
-                            
-                            Text("I love every second on ice.")
-                                .font(.caption)
-                        }
-                        
-                        
-                    }
-                    
+                    ListItem(hint: "🏒",
+                             title: "Hockey",
+                             summary: "I love my every second on ice.")
+                 
                 }
                 
             }
@@ -80,5 +47,29 @@ struct ContentView_Previews: PreviewProvider {
             .preferredColorScheme(.light)
         ContentView()
             .preferredColorScheme(.dark)
+    }
+}
+
+struct ListItem: View {
+    
+    var hint: String
+    var title: String
+    var summary: String
+    
+    var body: some View {
+        HStack {
+            Text(hint)
+                .font(.largeTitle)
+            
+            VStack(alignment: .leading) {
+                Text(title)
+                    .fontWeight(.bold)
+                
+                Text(summary)
+                    .font(.caption)
+            }
+            
+            
+        }
     }
 }
