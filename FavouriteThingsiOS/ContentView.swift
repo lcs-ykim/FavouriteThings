@@ -14,15 +14,57 @@ struct ContentView: View {
             List {
                 
                 NavigationLink(destination: TroyeSivan()) {
-                    Text("Troye Sivan")
+                    HStack {
+                        Text("🎤")
+                            .font(.largeTitle)
+                        
+                        VStack(alignment: .leading) {
+                            Text("Troye Sivan")
+                                .fontWeight(.bold)
+                            
+                            Text("His music is my inspiration.")
+                                .font(.caption)
+                        }
+                        
+                        
+                    }
+                    
                 }
                 
                 NavigationLink(destination: HanRiver()) {
-                    Text("Han River")
+                    HStack {
+                        Text("🌊")
+                            .font(.largeTitle)
+                        
+                        VStack(alignment: .leading) {
+                            Text("Han River")
+                                .fontWeight(.bold)
+                            
+                            Text("The warm breeze is always the best.")
+                                .font(.caption)
+                        }
+                        
+                        
+                    }
+                            
                 }
                 
                 NavigationLink(destination: Hockey()) {
-                    Text("Hockey")
+                    HStack {
+                        Text("🏒")
+                            .font(.largeTitle)
+                        
+                        VStack(alignment: .leading) {
+                            Text("Hockey")
+                                .fontWeight(.bold)
+                            
+                            Text("I love every second on ice.")
+                                .font(.caption)
+                        }
+                        
+                        
+                    }
+                    
                 }
                 
             }
@@ -35,5 +77,8 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .preferredColorScheme(.light)
+        ContentView()
+            .preferredColorScheme(.dark)
     }
 }
